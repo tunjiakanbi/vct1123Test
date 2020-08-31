@@ -1,0 +1,22 @@
+html, body, * {
+    padding: 0;
+    margin: 0;
+}
+div {
+    width: 100px;
+    height: 200px;
+    background-color: red;
+}
+div#secondDiv {
+    background-color: green;
+}
+
+.para {
+    color: white;
+}
+
+div:nth-child(3) {
+    background-color: black;
+    width: 1000px;
+    height: 200px;
+}
