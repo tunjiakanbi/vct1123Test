@@ -2,7 +2,7 @@ var addToHead = document.querySelector('head');
 var link = document.createElement('link');
 addToHead.appendChild(link);
 link.setAttribute('rel', 'stylesheet');
-link.setAttribute('href', 'css/style.css');
+link.setAttribute('href', 'css/style.css');//target head and add external css to it
 
 var wrapper = document.createElement('div');
 wrapper.classList.add('wrapper');
@@ -22,25 +22,27 @@ var color3 = "linear-gradient(35deg, #0B132B 0%, #5BC0BE 100%)";
 var color4 = "linear-gradient(235deg, #5BC0BE 0%, #3A506B 100%)";
 
 var colorsArray = [color1, color2, color3, color4];
+//console.log(colorsArray);
 //var colorsArray = ['#3E5BE6', '#418DF0', '#45ADD9', '#41E9F0'];
 var wrapper_Divs = document.getElementsByClassName('wrapperDivs');
-
+//console.log(wrapper_Divs);
 var divOne = wrapper_Divs.item(0)
 var divTwo = wrapper_Divs.item(1)
 var divThree = wrapper_Divs.item(2)
 var divFour = wrapper_Divs.item(3)
 var allDivs = [divOne, divTwo, divThree, divFour];
 //console.log(allDivs);
-var update = document.createElement('section');
+//var update = document.createElement('section');
 for (var i = 0; i < 4; i++) {
     var myDiv = allDivs[i];
+
     //myDiv.style.backgroundColor = '#8BC6EC';
     myDiv.style.backgroundImage = colorsArray[i];
     // myDiv.style.backgroundColor = colorsArray[i];
 
     var update = document.createElement('section');
-     myDiv.appendChild(update);
-     update.setAttribute('id', 'ID'+[i]);
+    myDiv.appendChild(update);
+    update.setAttribute('id', 'ID' + [i]);
 
 }
 
@@ -72,18 +74,20 @@ var allArtists = [artist1, artist2, artist3, artist4];
 function getArtist() {
     var sections = document.querySelectorAll('.wrapperDivs>section');
     console.log(sections);
-    for(var i=0; i<sections.length; i++) {
+    for (var i = 0; i < sections.length; i++) {
 
-        var artistList ="<table>";
+        var artistList = "<table>";
         artistList += "<tr><td>Artist Name: </td><td>" + allArtists[i].artistname + "</td></tr>";
         artistList += "<tr><td>Artist Album: </td><td>" + allArtists[i].album + "</td></tr>";
         artistList += "<tr><td>Artist Label: </td><td>" + allArtists[i].label + "</td></tr>";
         artistList += "<tr><td>Release Year: </td><td>" + allArtists[i].year + "</td></tr>";
         artistList += "</table>"
-        artistList += '<p><img src="images/' + allArtists[i].albumImg + '.jpeg" alt="'+ allArtists[i].album+'"></p>';
+        artistList += '<p><img src="images/' + allArtists[i].albumImg + '.jpeg" alt="' + allArtists[i].album + '"></p>';
         artistList += '<span>Artist Bio: </span><hr><p>' + allArtists[i].bio + '';
         artistList += "</p>"
         sections[i].innerHTML = artistList;
     }
 }
 getArtist();
+
+
