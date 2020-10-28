@@ -1,8 +1,8 @@
 var addToHead = document.querySelector('head');
-var link = document.createElement('link');
-addToHead.appendChild(link);
-link.setAttribute('rel', 'stylesheet');
-link.setAttribute('href', 'css/style.css');//target head and add external css to it
+var cssLink = document.createElement('link');
+addToHead.appendChild(cssLink);
+cssLink.setAttribute('rel', 'stylesheet');
+cssLink.setAttribute('href', 'css/style.css'); //target head and add external css to it
 
 var wrapper = document.createElement('div');
 wrapper.classList.add('wrapper');
@@ -31,11 +31,11 @@ var divTwo = wrapper_Divs.item(1)
 var divThree = wrapper_Divs.item(2)
 var divFour = wrapper_Divs.item(3)
 var allDivs = [divOne, divTwo, divThree, divFour];
-//console.log(allDivs);
+console.log(allDivs);
 //var update = document.createElement('section');
 for (var i = 0; i < 4; i++) {
     var myDiv = allDivs[i];
-
+    console.log(myDiv);
     //myDiv.style.backgroundColor = '#8BC6EC';
     myDiv.style.backgroundImage = colorsArray[i];
     // myDiv.style.backgroundColor = colorsArray[i];
@@ -73,7 +73,7 @@ var allArtists = [artist1, artist2, artist3, artist4];
 
 function getArtist() {
     var sections = document.querySelectorAll('.wrapperDivs>section');
-    console.log(sections);
+    //console.log(sections);
     for (var i = 0; i < sections.length; i++) {
 
         var artistList = "<table>";
@@ -89,5 +89,3 @@ function getArtist() {
     }
 }
 getArtist();
-
-
